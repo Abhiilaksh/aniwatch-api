@@ -22,7 +22,7 @@ const ANIWATCH_API_HOSTNAME = process.env?.ANIWATCH_API_HOSTNAME;
 const app = new Hono();
 
 app.use(logger());
-app.use(corsConfig);
+app.use(corsConfig); // Apply CORS middleware
 
 // CAUTION: For personal deployments, "refrain" from having an env
 // named "ANIWATCH_API_HOSTNAME". You may face rate limitting
