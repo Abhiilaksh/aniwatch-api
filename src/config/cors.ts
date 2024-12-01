@@ -4,7 +4,7 @@ import { cors } from "hono/cors";
 config();
 
 // Allow all origins
-const allowedOrigins = process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS?.split(",") || ["*"];
+const allowedOrigins = ["*"];
 
 const corsConfig = cors({
   origin: allowedOrigins,
