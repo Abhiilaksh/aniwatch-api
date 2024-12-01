@@ -4,13 +4,12 @@ import { cors } from "hono/cors";
 config();
 
 // Allow all origins
-const allowedOrigins = ["*"];
-
 const corsConfig = cors({
-  origin: allowedOrigins,
+  origin: "*",  // You can directly use "*" here
   allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowHeaders: ["Content-Type", "Authorization"],
-  maxAge: 600,// Allow credentials if needed
+  maxAge: 600,
+  credentials: true, // Allow credentials if needed
 });
 
 export default corsConfig;
