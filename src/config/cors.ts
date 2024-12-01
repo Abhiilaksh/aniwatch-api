@@ -3,14 +3,13 @@ import { cors } from "hono/cors";
 
 config();
 
-const allowedOrigins = process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS
-  ? process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS.split(",")
-  : ["http://localhost:4000", "*"];
+// Allow all origins
+const allowedOrigins = ["*"]; // Allow all origins for requests without credentials
 
 const corsConfig = cors({
   allowMethods: ["GET"],
   maxAge: 600,
-  credentials: true,
+  credentials: false, // No credentials allowed
   origin: allowedOrigins,
 });
 
